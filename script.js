@@ -170,7 +170,7 @@ function submitAnswer() {
         return;
     }
 
-    const errorPercent = (Math.abs(answer - currentValue) / 200) * 100;
+    const errorPercent = (Math.abs(answer - currentValue) / 240) * 100;
     const accuracy = 100 - errorPercent;
     const passed = errorPercent <= gameSettings[activeGameId].threshold;
 
