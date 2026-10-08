@@ -6,7 +6,7 @@
 
 #start-page {
     outline: 300px solid rgb(155, 181, 155);
-    padding: 10% 31%;
+    padding: 16% 29%;
     display: flex;
     flex-direction: column;
     gap: 10%;
@@ -27,6 +27,7 @@ main h1 {
 }
 
 #start-page h1 {
+    font-size:600%;
     margin-bottom: 10%;
     font-weight: 600;
 }
@@ -46,9 +47,7 @@ main h1 {
     display: none;
     flex-direction: column;
     align-items: center;
-    max-height: 100vh;
-    max-width: 150vw;
-    font-size: 0.7vw;
+    font-size: 90%;
 }
 #introduction-page {
     background-color: rgb(255, 255, 255);
