@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yuji+Boku&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>MTE祭用展示作品</title>
+</head>
+<body>
+    <main>
+        <div id="start-page">
+            <h1>音感ゲーム</h1>
+            <button onclick="startGame()">~~はじめる~~</button>
+            <button onclick="showIntroduction()">はじめに（必読）</button>
+        </div>
+        <div id="introduction">
+            <div id="introduction-page">
+                <div class="introduction-content">
+                    <h1>1,前提<br>&nbsp;&nbsp;&nbsp;440Hz（一般的に四オクターブの"ラ"の音）が基準。<br>&nbsp;&nbsp;&nbsp;"ラ"の音をしっかりこのページで覚えてからゲームに臨みましょう。<br>&nbsp;&nbsp;&nbsp;一つの全音に44Hzほど上下することを目安にしましょう。</h1>
+                    <h1>2,注意<br>&nbsp;&nbsp;&nbsp;音が流れます。周囲の環境に気を付け聞きやすい状況でゲームに臨んでください。<br>&nbsp;&nbsp;&nbsp;パソコンのみに対応しています。</h1>
+                    <h1>3,最後に<br>&nbsp;&nbsp;&nbsp;何度もやって少しずつ精度を上げていきましょう。</h1>
+                </div>
+                <button
+                    class="reference-tone-button"
+                    onmousedown="playTone()"
+                    onmouseup="stopTone()"
+                    onmouseleave="stopTone()"
+                > -->  ボタンを押し続けている間440Hz  <--  </button>
+                <button
+                    onclick="returnToTitle()"
+                    style="background-color: rgb(103, 112, 105);"
+                > -->  タイトルへはこちらから  <--  </button>
+            </div>
+        </div>
+        <div id="difficulty-selection">
+            <h1 style="font-size:3.5vw;">難易度選択</h1>
+            <div class="difficulty-options">
+                <button onclick="startEasyGame()">やさしいよ<br>誤差10%以下で合格<br>一般人レベル</button>
+                <button onclick="startNormalGame()">ふつうだよ<br>誤差8%以下で合格<br>耳がいい人</button>
+                <button onclick="startHardGame()">きびしいよ<br>誤差5%以下で合格<br>音楽の才能あり</button>
+                <button onclick="startExpertGame()">鬼畜だよ<br>誤差0.5%以下で合格<br>絶対音感に挑戦！</button>
+            </div>
+        </div>
+        <div id="easy-game">
+            <h1>「聞く」ボタンを押すと音が流れる。<br>下のバーを使いその音の周波数を当てよ。</h1>
+            <h1>難易度：易</h1>
+            <button class="play-tone-button">聞く</button>
+            <div class="answer-control">
+                <h1>回答:</h1>
+                <div class="slider-container">
+                    <input
+                        class="frequency-slider"
+                        type="range"
+                        min="320"
+                        max="560"
+                        value="440"
+                    >
+                    <p><span class="frequency-value">440</span>Hz</p>
+                </div>
+            </div>
+            <h2 class="answer-submit" onclick="submitAnswer()">（エンターキー又はここをクリックして回答）</h2>
+        </div>
+        <div id="normal-game">
+            <h1>「聞く」ボタンを押すと音が流れる。<br>下のバーを使いその音の周波数を当てよ。</h1>
+            <h1>難易度：普</h1>
+            <button class="play-tone-button">聞く</button>
+            <div class="answer-control">
+                <h1>回答:</h1>
+                <div class="slider-container">
+                    <input
+                        class="frequency-slider"
+                        type="range"
+                        min="320"
+                        max="560"
+                        value="440"
+                    >
+                    <p><span class="frequency-value">440</span>Hz</p>
+                </div>
+            </div>
+            <h2 class="answer-submit" onclick="submitAnswer()">（エンターキー又はここをクリックして回答）</h2>
+        </div>
+        <div id="hard-game">
+            <h1>「聞く」ボタンを押すと音が流れる。<br>下のバーを使いその音の周波数を当てよ。</h1>
+            <h1>難易度：厳</h1>
+            <button class="play-tone-button">聞く</button>
+            <div class="answer-control">
+                <h1>回答:</h1>
+                <div class="slider-container">
+                    <input
+                        class="frequency-slider"
+                        type="range"
+                        min="320"
+                        max="560"
+                        value="440"
+                    >
+                    <p><span class="frequency-value">440</span>Hz</p>
+                </div>
+            </div>
+            <h2 class="answer-submit" onclick="submitAnswer()">（エンターキー又はここをクリックして回答）</h2>
+        </div>
+        <div id="expert-game">
+            <h1>「聞く」ボタンを押すと音が流れる。<br>下のバーを使いその音の周波数を当てよ。</h1>
+            <h1>難易度：絶対音感</h1>
+            <button class="play-tone-button">聞く</button>
+            <div class="answer-control">
+                <h1>回答:</h1>
+                <div class="slider-container">
+                    <input
+                        class="frequency-slider"
+                        type="range"
+                        min="320"
+                        max="560"
+                        value="440"
+                    >
+                    <p><span class="frequency-value">440</span>Hz</p>
+                </div>
+            </div>
+            <h2 class="answer-submit" onclick="submitAnswer()">（エンターキー又はここをクリックして回答）</h2>
+        </div>
+        <div id="result-page">
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
